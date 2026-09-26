@@ -20,7 +20,7 @@ client=genai.Client(api_key=api_key)
 # thinking_level: controls the amount of model reasoning effort used for request
 
 generation_config={
-    'max_output_tokens':1000,
+    'max_output_tokens':2000,
     'thinking_level': 'medium'
 }
 
@@ -48,7 +48,29 @@ Target Job Role: {target_role}
 #Prompt Engineering
 career_prompt=f"""
 ROLE:
-You are an AI career advisor for post-grad students
+You are CareerTwin, You are an AI career advisor for post-grad students
+
+OBJECTIVE:
+Analyze the student;s current profile agains their target job role.
+
+ANALYSIS_REQUIREMENTS:
+1. Profile Summary
+-Summarize the student's current technical profile.
+
+2. Strengths
+- Identify skills, projects, education or experience that are relevant to the target role.
+
+3. Skill gaps
+- Identify important skills required for the target role that are missing or insufficiently represented.
+
+4. Priority Skills
+-Select the most importtant missing skills that student should learn first.
+
+5. Interview Topic
+- Identify technical topics that the student should explore for the target role.
+
+6. Recommentations
+- Provide practical next steps for becoming job ready.
 
 CONTEXT: 
 CareerTwin helps students understand software engineering career paths, required technical skills, learning 
@@ -65,6 +87,31 @@ CONSTRAINTS:
 - Keep the response concise and easy to understand
 
 {student_context}
+
+OUTPUT FORMAT:
+Profile Summary:
+<summary>
+
+Strengths:
+- <strength>
+
+Skill Gaps:
+- <skill>
+- <skill>
+
+Priority Skills:
+1. <skill>
+2. <skill>
+3. <skill>
+
+Interview Topics:
+- <topic>
+- <topic>
+
+Recommendations:
+1. <recommendation>
+2. <recommendation>
+3. <recommendation>
 
 STUDENT QUESTION:
 {user_input}
