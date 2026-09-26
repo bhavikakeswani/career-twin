@@ -1,0 +1,35 @@
+python -m venv venv
+source venv/bin/activate
+pip install -U google-genai
+pip show google-genai
+pip install python-dotenv
+
+========================
+Career Twin
+
+1. Basic Project Setup
+Module-1: Gemini API foundation
+Module-2: Prompt Engineering
+- Introduce a system level role
+- Create structured Prompt
+- Add structured context
+- Resume + Job Description Analysis
+- Structured JSON Output
+- Build Skill Gap Analyser
+- Generate Personalized Learning Roadmap
+- Generate Interview Questions for a perticular JD (Job Description)
+
+Finally Show Output on UI -> Streamlit
+
+===========================
+
+Prompt Engineering -  Setup system instructions/Prompt
+Context Engineering - Build the student career profile
+
+Now out prompt contains:
+Role
+Context
+Task
+Constraints
+Student profile
+Question
